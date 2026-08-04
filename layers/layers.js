@@ -294,15 +294,15 @@ var group_AutotrackanalysisE17501export = new ol.layer.Group({
                                 title: 'Autotrack analysis E175 01 export '});
 var group_EnvironmentalGridwithin2kmofEdgeofRoad = new ol.layer.Group({
                                 layers: [lyr_EdgeofRoad2kmBufferStudyArea_1,lyr_ProposedNaturalHeritageAreasin2km_2,lyr_SpecialAreaofConservationin2km_3,lyr_RiverWaterBodiesin2km_4,lyr_TailteEireannSingleStreamsin2km_5,lyr_SMRZonesin2km_6,lyr_SMROpenDatain2km_7,],
-                                fold: 'open',
+                                fold: 'close',
                                 title: 'Environmental & Grid within 2km of Edge of Road'});
 var group_SPAAssessment29thJuly2026 = new ol.layer.Group({
                                 layers: [],
-                                fold: 'open',
+                                fold: 'close',
                                 title: 'SPA Assessment 29th July 2026'});
 var group_TuamFoxhallPotentialSiteEntrance = new ol.layer.Group({
                                 layers: [],
-                                fold: 'open',
+                                fold: 'close',
                                 title: 'Tuam -> Foxhall -> Potential Site Entrance'});
 var group_Archive = new ol.layer.Group({
                                 layers: [],
