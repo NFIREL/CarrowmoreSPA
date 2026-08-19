@@ -55,21 +55,10 @@
     injectStyles();
     injectMarkup();
 
-    var commentSource = new ol.source.Vector();
-    var commentLayer = new ol.layer.Vector({
-      source: commentSource,
-      style: new ol.style.Style({
-        image: new ol.style.Circle({
-          radius: 8,
-          fill: new ol.style.Fill({ color: '#ff6b35' }),
-          stroke: new ol.style.Stroke({ color: '#ffffff', width: 2 })
-        })
-      })
-    });
-    map.addLayer(commentLayer);
+    var markers = [];
 
     var addMode = false;
-    var pendingCoordinate = null;
+    var pendingLatLng = null;
     var toggleBtn = document.getElementById('comment-toggle-btn');
     var backdrop = document.getElementById('comment-modal-backdrop');
     var modalTitle = document.getElementById('comment-modal-title');
@@ -104,20 +93,19 @@
     function closeModal() {
       backdrop.style.display = 'none';
       modalText.removeAttribute('readonly');
-      pendingCoordinate = null;
+      pendingLatLng = null;
     }
 
     cancelBtn.addEventListener('click', closeModal);
 
     submitBtn.addEventListener('click', function () {
-      if (!pendingCoordinate) return;
+      if (!pendingLatLng) return;
       var text = modalText.value.trim();
       if (!text) return;
-      var lonLat = ol.proj.toLonLat(pendingCoordinate, map.getView().getProjection());
       fetch('/api/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lng: lonLat[0], lat: lonLat[1], text: text })
+        body: JSON.stringify({ lng: pendingLatLng.lng, lat: pendingLatLng.lat, text: text })
       })
         .then(function (r) { return r.json(); })
         .then(function (comment) {
@@ -136,25 +124,32 @@
       addMode = on;
       toggleBtn.classList.toggle('active', on);
       toggleBtn.textContent = on ? 'Click map to place comment' : '\uD83D\uDCAC Add Comment';
-      map.getTargetElement().style.cursor = on ? 'crosshair' : '';
+      map.getContainer().style.cursor = on ? 'crosshair' : '';
     }
 
     toggleBtn.addEventListener('click', function () { setAddMode(!addMode); });
 
     function addMarker(comment) {
-      var feature = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([comment.lng, comment.lat], map.getView().getProjection()))
+      var marker = L.circleMarker([comment.lat, comment.lng], {
+        radius: 8,
+        color: '#ffffff',
+        weight: 2,
+        fillColor: '#ff6b35',
+        fillOpacity: 1
+      }).addTo(map);
+      marker.commentData = comment;
+      marker.on('click', function (e) {
+        L.DomEvent.stopPropagation(e);
+        openViewModal(comment);
       });
-      feature.set('commentData', comment);
-      commentSource.addFeature(feature);
+      markers.push(marker);
     }
 
     function refreshCommentList() {
-      var features = commentSource.getFeatures();
-      listToggleBtn.textContent = '\uD83D\uDCCB Comments (' + features.length + ')';
+      listToggleBtn.textContent = '\uD83D\uDCCB Comments (' + markers.length + ')';
       listItemsEl.innerHTML = '';
 
-      if (features.length === 0) {
+      if (markers.length === 0) {
         var empty = document.createElement('div');
         empty.className = 'comment-list-empty';
         empty.textContent = 'No comments yet.';
@@ -162,12 +157,12 @@
         return;
       }
 
-      var sorted = features.slice().sort(function (a, b) {
-        return b.get('commentData').timestamp - a.get('commentData').timestamp;
+      var sorted = markers.slice().sort(function (a, b) {
+        return b.commentData.timestamp - a.commentData.timestamp;
       });
 
-      sorted.forEach(function (feature) {
-        var data = feature.get('commentData');
+      sorted.forEach(function (marker) {
+        var data = marker.commentData;
         var item = document.createElement('div');
         item.className = 'comment-list-item';
 
@@ -184,11 +179,7 @@
         item.appendChild(metaEl);
 
         item.addEventListener('click', function () {
-          map.getView().animate({
-            center: feature.getGeometry().getCoordinates(),
-            zoom: 19,
-            duration: 600
-          });
+          map.flyTo([data.lat, data.lng], 19, { duration: 0.6 });
           openViewModal(data);
           listPanel.classList.remove('open');
         });
@@ -200,16 +191,11 @@
     listToggleBtn.addEventListener('click', function () { listPanel.classList.toggle('open'); });
     listClose.addEventListener('click', function () { listPanel.classList.remove('open'); });
 
-    map.on('singleclick', function (evt) {
+    map.on('click', function (e) {
       if (addMode) {
-        pendingCoordinate = evt.coordinate;
+        pendingLatLng = e.latlng;
         openAddModal();
-        return;
       }
-      var hit = map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-        if (layer === commentLayer) return feature;
-      });
-      if (hit) openViewModal(hit.get('commentData'));
     });
 
     fetch('/api/comments')
