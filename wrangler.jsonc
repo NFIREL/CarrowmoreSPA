@@ -1,0 +1,12 @@
+{
+  "name": "cwmewebmap",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-12",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    { "binding": "COMMENTS", "id": "deec4dcf865f4809b8e2704aa9147dbd" }
+  ]
+}
