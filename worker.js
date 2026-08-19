@@ -37,8 +37,12 @@ export default {
 
     const response = await env.ASSETS.fetch(request);
 
-    const contentType = response.headers.get("Content-Type") || "";
-    if (contentType.includes("text/html")) {
+    const isHTML =
+      url.pathname === "/" ||
+      url.pathname.endsWith(".html") ||
+      url.pathname.endsWith("/");
+
+    if (isHTML) {
       return new HTMLRewriter()
         .on("body", {
           element(element) {
