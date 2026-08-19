@@ -23,7 +23,7 @@ var style_WallsfromRoadSurvey_10 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(255,0,215,1.0)', lineDash: [2.28,4.56], lineCap: 'square', lineJoin: 'bevel', width: 2.28}),
+        stroke: new ol.style.Stroke({color: 'rgba(133,133,133,1.0)', lineDash: [9.12,4.56], lineCap: 'square', lineJoin: 'bevel', width: 2.28}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)

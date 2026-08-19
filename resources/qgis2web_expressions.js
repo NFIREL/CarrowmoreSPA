@@ -763,30 +763,3 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
-
-
-
-function exp_label_ProposedNaturalHeritageAreasin2km_2_eval_expression(context) {
-    // SITE_NAME
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return feature.get('SITE_NAME') ;
-    } else {
-        return feature.get('SITE_NAME') ;
-    }
-}
-
-
-function exp_label_SpecialAreaofConservationin2km_3_eval_expression(context) {
-    // SITE_NAME
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return feature.get('SITE_NAME') ;
-    } else {
-        return feature.get('SITE_NAME') ;
-    }
-}

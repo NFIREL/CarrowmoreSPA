@@ -1,156 +1,153 @@
 var wms_layers = [];
 
 
-        var lyr_GoogleSatellite_0 = new ol.layer.Tile({
-            'title': 'Google Satellite',
+        var lyr_ESRISatellite_0 = new ol.layer.Tile({
+            'title': 'ESRI Satellite',
             'opacity': 1.000000,
             
             
             source: new ol.source.XYZ({
-            attributions: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
-                url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
+            attributions: ' ',
+                url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
             })
         });
-var format_EdgeofRoad2kmBufferStudyArea_1 = new ol.format.GeoJSON();
-var features_EdgeofRoad2kmBufferStudyArea_1 = format_EdgeofRoad2kmBufferStudyArea_1.readFeatures(json_EdgeofRoad2kmBufferStudyArea_1, 
+var format_FolioInteractioSPAAssessment_1 = new ol.format.GeoJSON();
+var features_FolioInteractioSPAAssessment_1 = format_FolioInteractioSPAAssessment_1.readFeatures(json_FolioInteractioSPAAssessment_1, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_EdgeofRoad2kmBufferStudyArea_1 = new ol.source.Vector({
+var jsonSource_FolioInteractioSPAAssessment_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_EdgeofRoad2kmBufferStudyArea_1.addFeatures(features_EdgeofRoad2kmBufferStudyArea_1);
-var lyr_EdgeofRoad2kmBufferStudyArea_1 = new ol.layer.Vector({
+jsonSource_FolioInteractioSPAAssessment_1.addFeatures(features_FolioInteractioSPAAssessment_1);
+var lyr_FolioInteractioSPAAssessment_1 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_EdgeofRoad2kmBufferStudyArea_1, 
-                style: style_EdgeofRoad2kmBufferStudyArea_1,
-                popuplayertitle: 'Edge of Road 2km Buffer Study Area',
+                source:jsonSource_FolioInteractioSPAAssessment_1, 
+                style: style_FolioInteractioSPAAssessment_1,
+                popuplayertitle: 'Folio Interactio (SPA Assessment)',
                 interactive: true,
-                title: '<img src="styles/legend/EdgeofRoad2kmBufferStudyArea_1.png" /> Edge of Road 2km Buffer Study Area'
+                title: '<img src="styles/legend/FolioInteractioSPAAssessment_1.png" /> Folio Interactio (SPA Assessment)'
             });
-var format_ProposedNaturalHeritageAreasin2km_2 = new ol.format.GeoJSON();
-var features_ProposedNaturalHeritageAreasin2km_2 = format_ProposedNaturalHeritageAreasin2km_2.readFeatures(json_ProposedNaturalHeritageAreasin2km_2, 
+var format_SPAClippedtoLandowners_2 = new ol.format.GeoJSON();
+var features_SPAClippedtoLandowners_2 = format_SPAClippedtoLandowners_2.readFeatures(json_SPAClippedtoLandowners_2, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_ProposedNaturalHeritageAreasin2km_2 = new ol.source.Vector({
+var jsonSource_SPAClippedtoLandowners_2 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_ProposedNaturalHeritageAreasin2km_2.addFeatures(features_ProposedNaturalHeritageAreasin2km_2);
-var lyr_ProposedNaturalHeritageAreasin2km_2 = new ol.layer.Vector({
+jsonSource_SPAClippedtoLandowners_2.addFeatures(features_SPAClippedtoLandowners_2);
+var lyr_SPAClippedtoLandowners_2 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_ProposedNaturalHeritageAreasin2km_2, 
-                style: style_ProposedNaturalHeritageAreasin2km_2,
-                popuplayertitle: 'Proposed Natural Heritage Areas in 2km',
-                interactive: true,
-                title: '<img src="styles/legend/ProposedNaturalHeritageAreasin2km_2.png" /> Proposed Natural Heritage Areas in 2km'
-            });
-var format_SpecialAreaofConservationin2km_3 = new ol.format.GeoJSON();
-var features_SpecialAreaofConservationin2km_3 = format_SpecialAreaofConservationin2km_3.readFeatures(json_SpecialAreaofConservationin2km_3, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_SpecialAreaofConservationin2km_3 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_SpecialAreaofConservationin2km_3.addFeatures(features_SpecialAreaofConservationin2km_3);
-var lyr_SpecialAreaofConservationin2km_3 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_SpecialAreaofConservationin2km_3, 
-                style: style_SpecialAreaofConservationin2km_3,
-                popuplayertitle: 'Special Area of Conservation in 2km',
-                interactive: true,
-                title: '<img src="styles/legend/SpecialAreaofConservationin2km_3.png" /> Special Area of Conservation in 2km'
-            });
-var format_RiverWaterBodiesin2km_4 = new ol.format.GeoJSON();
-var features_RiverWaterBodiesin2km_4 = format_RiverWaterBodiesin2km_4.readFeatures(json_RiverWaterBodiesin2km_4, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_RiverWaterBodiesin2km_4 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_RiverWaterBodiesin2km_4.addFeatures(features_RiverWaterBodiesin2km_4);
-var lyr_RiverWaterBodiesin2km_4 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_RiverWaterBodiesin2km_4, 
-                style: style_RiverWaterBodiesin2km_4,
-                popuplayertitle: 'River Water Bodies in 2km',
-                interactive: true,
-    title: 'River Water Bodies in 2km<br />\
-    <img src="styles/legend/RiverWaterBodiesin2km_4_0.png" /> Not Protected<br />\
-    <img src="styles/legend/RiverWaterBodiesin2km_4_1.png" /> Protected<br />' });
-var format_TailteEireannSingleStreamsin2km_5 = new ol.format.GeoJSON();
-var features_TailteEireannSingleStreamsin2km_5 = format_TailteEireannSingleStreamsin2km_5.readFeatures(json_TailteEireannSingleStreamsin2km_5, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_TailteEireannSingleStreamsin2km_5 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_TailteEireannSingleStreamsin2km_5.addFeatures(features_TailteEireannSingleStreamsin2km_5);
-var lyr_TailteEireannSingleStreamsin2km_5 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_TailteEireannSingleStreamsin2km_5, 
-                style: style_TailteEireannSingleStreamsin2km_5,
-                popuplayertitle: 'Tailte Eireann Single Streams in 2km',
-                interactive: true,
-                title: '<img src="styles/legend/TailteEireannSingleStreamsin2km_5.png" /> Tailte Eireann Single Streams in 2km'
-            });
-var format_SMRZonesin2km_6 = new ol.format.GeoJSON();
-var features_SMRZonesin2km_6 = format_SMRZonesin2km_6.readFeatures(json_SMRZonesin2km_6, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_SMRZonesin2km_6 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_SMRZonesin2km_6.addFeatures(features_SMRZonesin2km_6);
-var lyr_SMRZonesin2km_6 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_SMRZonesin2km_6, 
-                style: style_SMRZonesin2km_6,
-                popuplayertitle: 'SMR Zones in 2km',
-                interactive: true,
-                title: '<img src="styles/legend/SMRZonesin2km_6.png" /> SMR Zones in 2km'
-            });
-var format_SMROpenDatain2km_7 = new ol.format.GeoJSON();
-var features_SMROpenDatain2km_7 = format_SMROpenDatain2km_7.readFeatures(json_SMROpenDatain2km_7, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_SMROpenDatain2km_7 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_SMROpenDatain2km_7.addFeatures(features_SMROpenDatain2km_7);
-var lyr_SMROpenDatain2km_7 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_SMROpenDatain2km_7,
-maxResolution:14.00223307613098,
- 
-                style: style_SMROpenDatain2km_7,
-                popuplayertitle: 'SMROpenData in 2km',
-                interactive: true,
-                title: '<img src="styles/legend/SMROpenDatain2km_7.png" /> SMROpenData in 2km'
-            });
-var format_SPAClippedtoLandowners_8 = new ol.format.GeoJSON();
-var features_SPAClippedtoLandowners_8 = format_SPAClippedtoLandowners_8.readFeatures(json_SPAClippedtoLandowners_8, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_SPAClippedtoLandowners_8 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_SPAClippedtoLandowners_8.addFeatures(features_SPAClippedtoLandowners_8);
-var lyr_SPAClippedtoLandowners_8 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_SPAClippedtoLandowners_8, 
-                style: style_SPAClippedtoLandowners_8,
+                source:jsonSource_SPAClippedtoLandowners_2, 
+                style: style_SPAClippedtoLandowners_2,
                 popuplayertitle: 'SPA Clipped to Landowners ',
                 interactive: true,
     title: 'SPA Clipped to Landowners <br />\
-    <img src="styles/legend/SPAClippedtoLandowners_8_0.png" /> High<br />\
-    <img src="styles/legend/SPAClippedtoLandowners_8_1.png" /> Medium<br />\
-    <img src="styles/legend/SPAClippedtoLandowners_8_2.png" /> Low<br />\
-    <img src="styles/legend/SPAClippedtoLandowners_8_3.png" /> N/A<br />' });
-var format_RoadEdgefromRoadSurvey_9 = new ol.format.GeoJSON();
-var features_RoadEdgefromRoadSurvey_9 = format_RoadEdgefromRoadSurvey_9.readFeatures(json_RoadEdgefromRoadSurvey_9, 
+    <img src="styles/legend/SPAClippedtoLandowners_2_0.png" /> High<br />\
+    <img src="styles/legend/SPAClippedtoLandowners_2_1.png" /> Medium<br />\
+    <img src="styles/legend/SPAClippedtoLandowners_2_2.png" /> Low<br />\
+    <img src="styles/legend/SPAClippedtoLandowners_2_3.png" /> N/A<br />' });
+var format_SPAAnalysis02LoadOutline_3 = new ol.format.GeoJSON();
+var features_SPAAnalysis02LoadOutline_3 = format_SPAAnalysis02LoadOutline_3.readFeatures(json_SPAAnalysis02LoadOutline_3, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_RoadEdgefromRoadSurvey_9 = new ol.source.Vector({
+var jsonSource_SPAAnalysis02LoadOutline_3 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_RoadEdgefromRoadSurvey_9.addFeatures(features_RoadEdgefromRoadSurvey_9);
-var lyr_RoadEdgefromRoadSurvey_9 = new ol.layer.Vector({
+jsonSource_SPAAnalysis02LoadOutline_3.addFeatures(features_SPAAnalysis02LoadOutline_3);
+var lyr_SPAAnalysis02LoadOutline_3 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_RoadEdgefromRoadSurvey_9, 
-                style: style_RoadEdgefromRoadSurvey_9,
+                source:jsonSource_SPAAnalysis02LoadOutline_3, 
+                style: style_SPAAnalysis02LoadOutline_3,
+                popuplayertitle: 'SPA Analysis 02 Load Outline',
+                interactive: true,
+                title: '<img src="styles/legend/SPAAnalysis02LoadOutline_3.png" /> SPA Analysis 02 Load Outline'
+            });
+var format_SPAAnalysis02BodyOutline_4 = new ol.format.GeoJSON();
+var features_SPAAnalysis02BodyOutline_4 = format_SPAAnalysis02BodyOutline_4.readFeatures(json_SPAAnalysis02BodyOutline_4, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SPAAnalysis02BodyOutline_4 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SPAAnalysis02BodyOutline_4.addFeatures(features_SPAAnalysis02BodyOutline_4);
+var lyr_SPAAnalysis02BodyOutline_4 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SPAAnalysis02BodyOutline_4, 
+                style: style_SPAAnalysis02BodyOutline_4,
+                popuplayertitle: 'SPA Analysis 02 Body Outline',
+                interactive: true,
+                title: '<img src="styles/legend/SPAAnalysis02BodyOutline_4.png" /> SPA Analysis 02 Body Outline'
+            });
+var format_SPAAnalysis02Wheelpath_5 = new ol.format.GeoJSON();
+var features_SPAAnalysis02Wheelpath_5 = format_SPAAnalysis02Wheelpath_5.readFeatures(json_SPAAnalysis02Wheelpath_5, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SPAAnalysis02Wheelpath_5 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SPAAnalysis02Wheelpath_5.addFeatures(features_SPAAnalysis02Wheelpath_5);
+var lyr_SPAAnalysis02Wheelpath_5 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SPAAnalysis02Wheelpath_5, 
+                style: style_SPAAnalysis02Wheelpath_5,
+                popuplayertitle: 'SPA Analysis 02 Wheelpath',
+                interactive: true,
+                title: '<img src="styles/legend/SPAAnalysis02Wheelpath_5.png" /> SPA Analysis 02 Wheelpath'
+            });
+var format_SPAAnalysis02Blade_6 = new ol.format.GeoJSON();
+var features_SPAAnalysis02Blade_6 = format_SPAAnalysis02Blade_6.readFeatures(json_SPAAnalysis02Blade_6, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SPAAnalysis02Blade_6 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SPAAnalysis02Blade_6.addFeatures(features_SPAAnalysis02Blade_6);
+var lyr_SPAAnalysis02Blade_6 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SPAAnalysis02Blade_6, 
+                style: style_SPAAnalysis02Blade_6,
+                popuplayertitle: 'SPA Analysis 02 Blade',
+                interactive: true,
+                title: '<img src="styles/legend/SPAAnalysis02Blade_6.png" /> SPA Analysis 02 Blade'
+            });
+var format_SPAAnalysis02Truck_7 = new ol.format.GeoJSON();
+var features_SPAAnalysis02Truck_7 = format_SPAAnalysis02Truck_7.readFeatures(json_SPAAnalysis02Truck_7, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_SPAAnalysis02Truck_7 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_SPAAnalysis02Truck_7.addFeatures(features_SPAAnalysis02Truck_7);
+var lyr_SPAAnalysis02Truck_7 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_SPAAnalysis02Truck_7, 
+                style: style_SPAAnalysis02Truck_7,
+                popuplayertitle: 'SPA Analysis 02 Truck',
+                interactive: true,
+                title: '<img src="styles/legend/SPAAnalysis02Truck_7.png" /> SPA Analysis 02 Truck'
+            });
+var format_RoadEdgefromRoadSurvey_8 = new ol.format.GeoJSON();
+var features_RoadEdgefromRoadSurvey_8 = format_RoadEdgefromRoadSurvey_8.readFeatures(json_RoadEdgefromRoadSurvey_8, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_RoadEdgefromRoadSurvey_8 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_RoadEdgefromRoadSurvey_8.addFeatures(features_RoadEdgefromRoadSurvey_8);
+var lyr_RoadEdgefromRoadSurvey_8 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_RoadEdgefromRoadSurvey_8, 
+                style: style_RoadEdgefromRoadSurvey_8,
                 popuplayertitle: 'Road Edge from Road Survey',
                 interactive: true,
-                title: '<img src="styles/legend/RoadEdgefromRoadSurvey_9.png" /> Road Edge from Road Survey'
+                title: '<img src="styles/legend/RoadEdgefromRoadSurvey_8.png" /> Road Edge from Road Survey'
+            });
+var format_DashedYellowLinefromRoadSurvey_9 = new ol.format.GeoJSON();
+var features_DashedYellowLinefromRoadSurvey_9 = format_DashedYellowLinefromRoadSurvey_9.readFeatures(json_DashedYellowLinefromRoadSurvey_9, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DashedYellowLinefromRoadSurvey_9 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DashedYellowLinefromRoadSurvey_9.addFeatures(features_DashedYellowLinefromRoadSurvey_9);
+var lyr_DashedYellowLinefromRoadSurvey_9 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_DashedYellowLinefromRoadSurvey_9, 
+                style: style_DashedYellowLinefromRoadSurvey_9,
+                popuplayertitle: 'Dashed Yellow Line from Road Survey',
+                interactive: true,
+                title: '<img src="styles/legend/DashedYellowLinefromRoadSurvey_9.png" /> Dashed Yellow Line from Road Survey'
             });
 var format_WallsfromRoadSurvey_10 = new ol.format.GeoJSON();
 var features_WallsfromRoadSurvey_10 = format_WallsfromRoadSurvey_10.readFeatures(json_WallsfromRoadSurvey_10, 
@@ -214,7 +211,7 @@ var lyr_OHLfromRoadSurvey_13 = new ol.layer.Vector({
             });
 var group_SiteDetails = new ol.layer.Group({
                                 layers: [],
-                                fold: 'open',
+                                fold: 'close',
                                 title: 'Site Details'});
 var group_DraftSiteLayout1InitialSiteLayoutfromProspecting = new ol.layer.Group({
                                 layers: [],
@@ -273,7 +270,7 @@ var group_AutotrackanalysisE17501export = new ol.layer.Group({
                                 fold: 'close',
                                 title: 'Autotrack analysis E175 01 export'});
 var group_AutotrackanalysisE17502exportminimiseNF = new ol.layer.Group({
-                                layers: [lyr_SPAClippedtoLandowners_8,],
+                                layers: [lyr_FolioInteractioSPAAssessment_1,lyr_SPAClippedtoLandowners_2,lyr_SPAAnalysis02LoadOutline_3,lyr_SPAAnalysis02BodyOutline_4,lyr_SPAAnalysis02Wheelpath_5,lyr_SPAAnalysis02Blade_6,lyr_SPAAnalysis02Truck_7,],
                                 fold: 'close',
                                 title: 'Autotrack analysis E175 02 export (minimise NF)'});
 var group_AutotrackanalysisE17502export = new ol.layer.Group({
@@ -281,7 +278,7 @@ var group_AutotrackanalysisE17502export = new ol.layer.Group({
                                 fold: 'close',
                                 title: 'Autotrack analysis E175 02 export'});
 var group_CarrowmoreHorizonTopographicSurvey = new ol.layer.Group({
-                                layers: [lyr_RoadEdgefromRoadSurvey_9,lyr_WallsfromRoadSurvey_10,lyr_FencefromRoadSurvey_11,lyr_VegetationfromRoadSurvey_12,lyr_OHLfromRoadSurvey_13,],
+                                layers: [lyr_RoadEdgefromRoadSurvey_8,lyr_DashedYellowLinefromRoadSurvey_9,lyr_WallsfromRoadSurvey_10,lyr_FencefromRoadSurvey_11,lyr_VegetationfromRoadSurvey_12,lyr_OHLfromRoadSurvey_13,],
                                 fold: 'close',
                                 title: 'Carrowmore Horizon Topographic Survey'});
 var group_CarrowmoreRoadsurvey2017 = new ol.layer.Group({
@@ -293,13 +290,9 @@ var group_AutotrackanalysisE17501export = new ol.layer.Group({
                                 fold: 'close',
                                 title: 'Autotrack analysis E175 01 export '});
 var group_EnvironmentalGridwithin2kmofEdgeofRoad = new ol.layer.Group({
-                                layers: [lyr_EdgeofRoad2kmBufferStudyArea_1,lyr_ProposedNaturalHeritageAreasin2km_2,lyr_SpecialAreaofConservationin2km_3,lyr_RiverWaterBodiesin2km_4,lyr_TailteEireannSingleStreamsin2km_5,lyr_SMRZonesin2km_6,lyr_SMROpenDatain2km_7,],
-                                fold: 'close',
-                                title: 'Environmental & Grid within 2km of Edge of Road'});
-var group_SPAAssessment29thJuly2026 = new ol.layer.Group({
                                 layers: [],
                                 fold: 'close',
-                                title: 'SPA Assessment 29th July 2026'});
+                                title: 'Environmental & Grid within 2km of Edge of Road'});
 var group_TuamFoxhallPotentialSiteEntrance = new ol.layer.Group({
                                 layers: [],
                                 fold: 'close',
@@ -373,47 +366,47 @@ var group_Georeferenced = new ol.layer.Group({
                                 fold: 'close',
                                 title: 'Georeferenced'});
 var group_Mapping = new ol.layer.Group({
-                                layers: [lyr_GoogleSatellite_0,],
+                                layers: [lyr_ESRISatellite_0,],
                                 fold: 'close',
                                 title: 'Mapping'});
 
-lyr_GoogleSatellite_0.setVisible(true);lyr_EdgeofRoad2kmBufferStudyArea_1.setVisible(true);lyr_ProposedNaturalHeritageAreasin2km_2.setVisible(true);lyr_SpecialAreaofConservationin2km_3.setVisible(true);lyr_RiverWaterBodiesin2km_4.setVisible(true);lyr_TailteEireannSingleStreamsin2km_5.setVisible(true);lyr_SMRZonesin2km_6.setVisible(true);lyr_SMROpenDatain2km_7.setVisible(true);lyr_SPAClippedtoLandowners_8.setVisible(true);lyr_RoadEdgefromRoadSurvey_9.setVisible(true);lyr_WallsfromRoadSurvey_10.setVisible(true);lyr_FencefromRoadSurvey_11.setVisible(true);lyr_VegetationfromRoadSurvey_12.setVisible(true);lyr_OHLfromRoadSurvey_13.setVisible(true);
-var layersList = [group_Mapping,group_EnvironmentalGridwithin2kmofEdgeofRoad,group_AutotrackanalysisE17502exportminimiseNF,group_CarrowmoreHorizonTopographicSurvey];
-lyr_EdgeofRoad2kmBufferStudyArea_1.set('fieldAliases', {'FID': 'FID', 'Details': 'Details', });
-lyr_ProposedNaturalHeritageAreasin2km_2.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'SITECODE': 'SITECODE', 'SITE_NAME': 'SITE_NAME', 'COUNTY': 'COUNTY', 'VERSION': 'VERSION', 'HA': 'HA', 'Source_CRS': 'Source_CRS', 'SourcScale': 'SourcScale', 'URL': 'URL', 'Shape__Are': 'Shape__Are', 'Shape__Len': 'Shape__Len', });
-lyr_SpecialAreaofConservationin2km_3.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'SITECODE': 'SITECODE', 'SITE_NAME': 'SITE_NAME', 'VERSION': 'VERSION', 'COUNTY': 'COUNTY', 'HA': 'HA', 'Source_CRS': 'Source_CRS', 'SourcScale': 'SourcScale', 'URL': 'URL', 'Shape__Are': 'Shape__Are', 'Shape__Len': 'Shape__Len', });
-lyr_RiverWaterBodiesin2km_4.set('fieldAliases', {'EU_CD': 'EU_CD', 'NAME': 'NAME', 'MS_CD': 'MS_CD', 'REGION_CD': 'REGION_CD', 'INS_WHEN': 'INS_WHEN', 'INS_BY': 'INS_BY', 'BASIN_CD': 'BASIN_CD', 'LAT': 'LAT', 'LON': 'LON', 'LENGTHKM': 'LENGTHKM', 'SUB_CD': 'SUB_CD', 'DateChange': 'DateChange', 'Change': 'Change', 'GEOLOGY': 'GEOLOGY', 'AreaKm2': 'AreaKm2', 'AreaHectar': 'AreaHectar', 'Slope': 'Slope', 'Altitude': 'Altitude', 'WaterManag': 'WaterManag', 'EdenEntity': 'EdenEntity', 'Easting': 'Easting', 'Northing': 'Northing', 'LocalAutho': 'LocalAutho', 'SYSTEM': 'SYSTEM', 'TYPE': 'TYPE', 'ALT_CAT': 'ALT_CAT', 'SIZE_CAT': 'SIZE_CAT', 'DIST_CD': 'DIST_CD', 'ProtectedA': 'ProtectedA', 'WiseRefere': 'WiseRefere', 'HydroArea': 'HydroArea', 'StnDefinin': 'StnDefinin', });
-lyr_TailteEireannSingleStreamsin2km_5.set('fieldAliases', {'fid': 'fid', 'GUID': 'GUID', 'OBJECTID': 'OBJECTID', });
-lyr_SMRZonesin2km_6.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'ZONE_ID': 'ZONE_ID ', 'Shape__Are': 'Shape__Are', 'Shape__Len': 'Shape__Len', });
-lyr_SMROpenDatain2km_7.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'ENTITY_ID': 'ENTITY_ID', 'CLASS_CODE': 'CLASS_CODE', 'SMRS': 'SMRS', 'COUNTY': 'COUNTY', 'TOWNLAND': 'TOWNLAND', 'ZONE_ID_1': 'ZONE_ID ', 'ITM_E': 'ITM_E', 'ITM_N': 'ITM_N', 'LONGITUDE': 'LONGITUDE', 'LATITUDE': 'LATITUDE', 'MONUMENT_C': 'MONUMENT_C', 'FIRST_EDIT': 'FIRST_EDIT', 'LATEST_EDI': 'LATEST_EDI', 'WEBSITE_LI': 'WEBSITE_LI', 'WEB_NOTES': 'WEB_NOTES', 'REFERENCES': 'REFERENCES', });
-lyr_SPAClippedtoLandowners_8.set('fieldAliases', {'localid': 'localid', 'SPAName': 'SPAName', 'SPAFolio': 'SPAFolio', 'SPADetails': 'SPADetails', 'SPAAddress': 'SPAAddress', 'Work': 'Work', 'Severity': 'Severity', 'Photo': 'Photo', 'Area (Ha)': 'Area (Ha)', 'Area (Ac)': 'Area (Ac)', 'Area (SqM)': 'Area (SqM)', });
-lyr_RoadEdgefromRoadSurvey_9.set('fieldAliases', {'FID': 'FID', 'Details': 'Details', });
+lyr_ESRISatellite_0.setVisible(true);lyr_FolioInteractioSPAAssessment_1.setVisible(true);lyr_SPAClippedtoLandowners_2.setVisible(true);lyr_SPAAnalysis02LoadOutline_3.setVisible(true);lyr_SPAAnalysis02BodyOutline_4.setVisible(true);lyr_SPAAnalysis02Wheelpath_5.setVisible(true);lyr_SPAAnalysis02Blade_6.setVisible(true);lyr_SPAAnalysis02Truck_7.setVisible(true);lyr_RoadEdgefromRoadSurvey_8.setVisible(true);lyr_DashedYellowLinefromRoadSurvey_9.setVisible(true);lyr_WallsfromRoadSurvey_10.setVisible(true);lyr_FencefromRoadSurvey_11.setVisible(true);lyr_VegetationfromRoadSurvey_12.setVisible(true);lyr_OHLfromRoadSurvey_13.setVisible(true);
+var layersList = [group_Mapping,group_AutotrackanalysisE17502exportminimiseNF,group_CarrowmoreHorizonTopographicSurvey];
+lyr_FolioInteractioSPAAssessment_1.set('fieldAliases', {'gid': 'gid', 'localid': 'localid', 'Area_Ha': 'Area_Ha', 'Area_Ac': 'Area_Ac', 'SPACode': 'SPACode', 'SPAName': 'SPAName', 'SPAFolio': 'SPAFolio', 'SPADetails': 'SPADetails', 'SPAAddress': 'SPAAddress', });
+lyr_SPAClippedtoLandowners_2.set('fieldAliases', {'localid': 'localid', 'SPAName': 'SPAName', 'SPAFolio': 'SPAFolio', 'SPADetails': 'SPADetails', 'SPAAddress': 'SPAAddress', 'Work': 'Work', 'Severity': 'Severity', 'Photo': 'Photo', 'Area (Ha)': 'Area (Ha)', 'Area (Ac)': 'Area (Ac)', 'Area (SqM)': 'Area (SqM)', });
+lyr_SPAAnalysis02LoadOutline_3.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparen': 'transparen', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_SPAAnalysis02BodyOutline_4.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparen': 'transparen', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_SPAAnalysis02Wheelpath_5.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparen': 'transparen', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_SPAAnalysis02Blade_6.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparen': 'transparen', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_SPAAnalysis02Truck_7.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparen': 'transparen', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'width': 'width', 'thickness': 'thickness', 'ext': 'ext', });
+lyr_RoadEdgefromRoadSurvey_8.set('fieldAliases', {'FID': 'FID', 'Details': 'Details', });
+lyr_DashedYellowLinefromRoadSurvey_9.set('fieldAliases', {'fid': 'fid', 'handle': 'handle', 'block': 'block', 'etype': 'etype', 'space': 'space', 'layer': 'layer', 'olinetype': 'olinetype', 'linetype': 'linetype', 'color': 'color', 'ocolor': 'ocolor', 'color24': 'color24', 'transparen': 'transparen', 'lweight': 'lweight', 'linewidth': 'linewidth', 'ltscale': 'ltscale', 'visible': 'visible', 'thickness': 'thickness', 'ext': 'ext', 'width': 'width', });
 lyr_WallsfromRoadSurvey_10.set('fieldAliases', {'Details': 'Details', });
 lyr_FencefromRoadSurvey_11.set('fieldAliases', {'Details': 'Details', });
 lyr_VegetationfromRoadSurvey_12.set('fieldAliases', {'Details': 'Details', });
 lyr_OHLfromRoadSurvey_13.set('fieldAliases', {'Details': 'Details', });
-lyr_EdgeofRoad2kmBufferStudyArea_1.set('fieldImages', {'FID': 'TextEdit', 'Details': 'TextEdit', });
-lyr_ProposedNaturalHeritageAreasin2km_2.set('fieldImages', {'OBJECTID': '', 'SITECODE': '', 'SITE_NAME': '', 'COUNTY': '', 'VERSION': '', 'HA': '', 'Source_CRS': '', 'SourcScale': '', 'URL': '', 'Shape__Are': '', 'Shape__Len': '', });
-lyr_SpecialAreaofConservationin2km_3.set('fieldImages', {'OBJECTID': '', 'SITECODE': '', 'SITE_NAME': '', 'VERSION': '', 'COUNTY': '', 'HA': '', 'Source_CRS': '', 'SourcScale': '', 'URL': '', 'Shape__Are': '', 'Shape__Len': '', });
-lyr_RiverWaterBodiesin2km_4.set('fieldImages', {'EU_CD': 'TextEdit', 'NAME': 'TextEdit', 'MS_CD': 'TextEdit', 'REGION_CD': 'TextEdit', 'INS_WHEN': 'DateTime', 'INS_BY': 'TextEdit', 'BASIN_CD': 'TextEdit', 'LAT': 'TextEdit', 'LON': 'TextEdit', 'LENGTHKM': 'TextEdit', 'SUB_CD': 'TextEdit', 'DateChange': 'DateTime', 'Change': 'TextEdit', 'GEOLOGY': 'TextEdit', 'AreaKm2': 'TextEdit', 'AreaHectar': 'TextEdit', 'Slope': 'TextEdit', 'Altitude': 'TextEdit', 'WaterManag': 'TextEdit', 'EdenEntity': 'TextEdit', 'Easting': 'TextEdit', 'Northing': 'TextEdit', 'LocalAutho': 'TextEdit', 'SYSTEM': 'TextEdit', 'TYPE': 'TextEdit', 'ALT_CAT': 'TextEdit', 'SIZE_CAT': 'TextEdit', 'DIST_CD': 'TextEdit', 'ProtectedA': 'TextEdit', 'WiseRefere': 'TextEdit', 'HydroArea': 'TextEdit', 'StnDefinin': 'TextEdit', });
-lyr_TailteEireannSingleStreamsin2km_5.set('fieldImages', {'fid': '', 'GUID': 'TextEdit', 'OBJECTID': 'Range', });
-lyr_SMRZonesin2km_6.set('fieldImages', {'OBJECTID': '', 'ZONE_ID': '', 'Shape__Are': '', 'Shape__Len': '', });
-lyr_SMROpenDatain2km_7.set('fieldImages', {'OBJECTID': 'TextEdit', 'ENTITY_ID': 'TextEdit', 'CLASS_CODE': 'TextEdit', 'SMRS': 'TextEdit', 'COUNTY': 'TextEdit', 'TOWNLAND': 'TextEdit', 'ZONE_ID_1': '', 'ITM_E': 'TextEdit', 'ITM_N': 'TextEdit', 'LONGITUDE': 'TextEdit', 'LATITUDE': 'TextEdit', 'MONUMENT_C': '', 'FIRST_EDIT': '', 'LATEST_EDI': '', 'WEBSITE_LI': '', 'WEB_NOTES': 'TextEdit', 'REFERENCES': '', });
-lyr_SPAClippedtoLandowners_8.set('fieldImages', {'localid': 'TextEdit', 'SPAName': 'TextEdit', 'SPAFolio': 'TextEdit', 'SPADetails': 'TextEdit', 'SPAAddress': 'TextEdit', 'Work': 'TextEdit', 'Severity': 'TextEdit', 'Photo': 'ExternalResource', 'Area (Ha)': '', 'Area (Ac)': '', 'Area (SqM)': '', });
-lyr_RoadEdgefromRoadSurvey_9.set('fieldImages', {'FID': 'TextEdit', 'Details': '', });
+lyr_FolioInteractioSPAAssessment_1.set('fieldImages', {'gid': 'TextEdit', 'localid': 'TextEdit', 'Area_Ha': 'TextEdit', 'Area_Ac': 'TextEdit', 'SPACode': '', 'SPAName': '', 'SPAFolio': '', 'SPADetails': '', 'SPAAddress': '', });
+lyr_SPAClippedtoLandowners_2.set('fieldImages', {'localid': 'TextEdit', 'SPAName': 'TextEdit', 'SPAFolio': 'TextEdit', 'SPADetails': 'TextEdit', 'SPAAddress': 'TextEdit', 'Work': 'TextEdit', 'Severity': 'TextEdit', 'Photo': 'ExternalResource', 'Area (Ha)': '', 'Area (Ac)': '', 'Area (SqM)': '', });
+lyr_SPAAnalysis02LoadOutline_3.set('fieldImages', {'fid': '', 'handle': '', 'block': '', 'etype': '', 'space': '', 'layer': '', 'olinetype': '', 'linetype': '', 'color': '', 'ocolor': '', 'color24': '', 'transparen': '', 'lweight': '', 'linewidth': '', 'ltscale': '', 'visible': '', 'width': '', 'thickness': '', 'ext': '', });
+lyr_SPAAnalysis02BodyOutline_4.set('fieldImages', {'fid': '', 'handle': '', 'block': '', 'etype': '', 'space': '', 'layer': '', 'olinetype': '', 'linetype': '', 'color': '', 'ocolor': '', 'color24': '', 'transparen': '', 'lweight': '', 'linewidth': '', 'ltscale': '', 'visible': '', 'width': '', 'thickness': '', 'ext': '', });
+lyr_SPAAnalysis02Wheelpath_5.set('fieldImages', {'fid': '', 'handle': '', 'block': '', 'etype': '', 'space': '', 'layer': '', 'olinetype': '', 'linetype': '', 'color': '', 'ocolor': '', 'color24': '', 'transparen': '', 'lweight': '', 'linewidth': '', 'ltscale': '', 'visible': '', 'width': '', 'thickness': '', 'ext': '', });
+lyr_SPAAnalysis02Blade_6.set('fieldImages', {'fid': '', 'handle': '', 'block': '', 'etype': '', 'space': '', 'layer': '', 'olinetype': '', 'linetype': '', 'color': '', 'ocolor': '', 'color24': '', 'transparen': '', 'lweight': '', 'linewidth': '', 'ltscale': '', 'visible': '', 'width': '', 'thickness': '', 'ext': '', });
+lyr_SPAAnalysis02Truck_7.set('fieldImages', {'fid': '', 'handle': '', 'block': '', 'etype': '', 'space': '', 'layer': '', 'olinetype': '', 'linetype': '', 'color': '', 'ocolor': '', 'color24': '', 'transparen': '', 'lweight': '', 'linewidth': '', 'ltscale': '', 'visible': '', 'width': '', 'thickness': '', 'ext': '', });
+lyr_RoadEdgefromRoadSurvey_8.set('fieldImages', {'FID': 'TextEdit', 'Details': '', });
+lyr_DashedYellowLinefromRoadSurvey_9.set('fieldImages', {'fid': 'TextEdit', 'handle': 'TextEdit', 'block': 'TextEdit', 'etype': 'TextEdit', 'space': 'TextEdit', 'layer': 'TextEdit', 'olinetype': 'TextEdit', 'linetype': 'TextEdit', 'color': 'TextEdit', 'ocolor': 'TextEdit', 'color24': 'TextEdit', 'transparen': 'TextEdit', 'lweight': 'TextEdit', 'linewidth': 'TextEdit', 'ltscale': 'TextEdit', 'visible': 'TextEdit', 'thickness': 'TextEdit', 'ext': 'TextEdit', 'width': 'TextEdit', });
 lyr_WallsfromRoadSurvey_10.set('fieldImages', {'Details': 'TextEdit', });
 lyr_FencefromRoadSurvey_11.set('fieldImages', {'Details': 'TextEdit', });
 lyr_VegetationfromRoadSurvey_12.set('fieldImages', {'Details': 'TextEdit', });
 lyr_OHLfromRoadSurvey_13.set('fieldImages', {'Details': 'TextEdit', });
-lyr_EdgeofRoad2kmBufferStudyArea_1.set('fieldLabels', {'FID': 'header label - visible with data', 'Details': 'header label - visible with data', });
-lyr_ProposedNaturalHeritageAreasin2km_2.set('fieldLabels', {'OBJECTID': 'header label - visible with data', 'SITECODE': 'header label - visible with data', 'SITE_NAME': 'header label - visible with data', 'COUNTY': 'header label - visible with data', 'VERSION': 'header label - visible with data', 'HA': 'header label - visible with data', 'Source_CRS': 'header label - visible with data', 'SourcScale': 'header label - visible with data', 'URL': 'header label - visible with data', 'Shape__Are': 'header label - visible with data', 'Shape__Len': 'header label - visible with data', });
-lyr_SpecialAreaofConservationin2km_3.set('fieldLabels', {'OBJECTID': 'header label - visible with data', 'SITECODE': 'header label - visible with data', 'SITE_NAME': 'header label - visible with data', 'VERSION': 'header label - visible with data', 'COUNTY': 'header label - visible with data', 'HA': 'header label - visible with data', 'Source_CRS': 'header label - visible with data', 'SourcScale': 'header label - visible with data', 'URL': 'header label - visible with data', 'Shape__Are': 'header label - visible with data', 'Shape__Len': 'header label - visible with data', });
-lyr_RiverWaterBodiesin2km_4.set('fieldLabels', {'EU_CD': 'hidden field', 'NAME': 'header label - visible with data', 'MS_CD': 'header label - always visible', 'REGION_CD': 'header label - visible with data', 'INS_WHEN': 'header label - visible with data', 'INS_BY': 'header label - visible with data', 'BASIN_CD': 'header label - visible with data', 'LAT': 'header label - visible with data', 'LON': 'header label - visible with data', 'LENGTHKM': 'header label - visible with data', 'SUB_CD': 'header label - visible with data', 'DateChange': 'header label - visible with data', 'Change': 'header label - visible with data', 'GEOLOGY': 'header label - visible with data', 'AreaKm2': 'header label - visible with data', 'AreaHectar': 'header label - visible with data', 'Slope': 'header label - visible with data', 'Altitude': 'header label - visible with data', 'WaterManag': 'header label - visible with data', 'EdenEntity': 'header label - visible with data', 'Easting': 'header label - visible with data', 'Northing': 'header label - visible with data', 'LocalAutho': 'inline label - visible with data', 'SYSTEM': 'header label - visible with data', 'TYPE': 'header label - visible with data', 'ALT_CAT': 'header label - visible with data', 'SIZE_CAT': 'header label - visible with data', 'DIST_CD': 'header label - visible with data', 'ProtectedA': 'header label - visible with data', 'WiseRefere': 'header label - visible with data', 'HydroArea': 'header label - visible with data', 'StnDefinin': 'header label - visible with data', });
-lyr_TailteEireannSingleStreamsin2km_5.set('fieldLabels', {'fid': 'header label - visible with data', 'GUID': 'header label - visible with data', 'OBJECTID': 'header label - visible with data', });
-lyr_SMRZonesin2km_6.set('fieldLabels', {'OBJECTID': 'header label - visible with data', 'ZONE_ID': 'header label - visible with data', 'Shape__Are': 'header label - visible with data', 'Shape__Len': 'header label - visible with data', });
-lyr_SMROpenDatain2km_7.set('fieldLabels', {'OBJECTID': 'header label - visible with data', 'ENTITY_ID': 'header label - visible with data', 'CLASS_CODE': 'header label - visible with data', 'SMRS': 'header label - visible with data', 'COUNTY': 'header label - visible with data', 'TOWNLAND': 'header label - always visible', 'ZONE_ID_1': 'header label - visible with data', 'ITM_E': 'header label - visible with data', 'ITM_N': 'header label - visible with data', 'LONGITUDE': 'header label - visible with data', 'LATITUDE': 'header label - visible with data', 'MONUMENT_C': 'header label - visible with data', 'FIRST_EDIT': 'header label - visible with data', 'LATEST_EDI': 'header label - visible with data', 'WEBSITE_LI': 'header label - visible with data', 'WEB_NOTES': 'header label - visible with data', 'REFERENCES': 'header label - visible with data', });
-lyr_SPAClippedtoLandowners_8.set('fieldLabels', {'localid': 'header label - visible with data', 'SPAName': 'header label - visible with data', 'SPAFolio': 'header label - visible with data', 'SPADetails': 'header label - visible with data', 'SPAAddress': 'header label - visible with data', 'Work': 'header label - visible with data', 'Severity': 'header label - visible with data', 'Photo': 'header label - visible with data', 'Area (Ha)': 'header label - visible with data', 'Area (Ac)': 'header label - visible with data', 'Area (SqM)': 'header label - visible with data', });
-lyr_RoadEdgefromRoadSurvey_9.set('fieldLabels', {'FID': 'no label', 'Details': 'header label - visible with data', });
+lyr_FolioInteractioSPAAssessment_1.set('fieldLabels', {'gid': 'header label - visible with data', 'localid': 'header label - visible with data', 'Area_Ha': 'header label - visible with data', 'Area_Ac': 'header label - visible with data', 'SPACode': 'header label - visible with data', 'SPAName': 'header label - visible with data', 'SPAFolio': 'header label - visible with data', 'SPADetails': 'header label - visible with data', 'SPAAddress': 'header label - visible with data', });
+lyr_SPAClippedtoLandowners_2.set('fieldLabels', {'localid': 'header label - visible with data', 'SPAName': 'header label - visible with data', 'SPAFolio': 'header label - visible with data', 'SPADetails': 'header label - visible with data', 'SPAAddress': 'header label - visible with data', 'Work': 'header label - visible with data', 'Severity': 'header label - visible with data', 'Photo': 'header label - visible with data', 'Area (Ha)': 'header label - visible with data', 'Area (Ac)': 'header label - visible with data', 'Area (SqM)': 'header label - visible with data', });
+lyr_SPAAnalysis02LoadOutline_3.set('fieldLabels', {'fid': 'no label', 'handle': 'no label', 'block': 'no label', 'etype': 'no label', 'space': 'no label', 'layer': 'no label', 'olinetype': 'no label', 'linetype': 'no label', 'color': 'no label', 'ocolor': 'no label', 'color24': 'no label', 'transparen': 'no label', 'lweight': 'no label', 'linewidth': 'no label', 'ltscale': 'no label', 'visible': 'no label', 'width': 'no label', 'thickness': 'no label', 'ext': 'no label', });
+lyr_SPAAnalysis02BodyOutline_4.set('fieldLabels', {'fid': 'no label', 'handle': 'no label', 'block': 'no label', 'etype': 'no label', 'space': 'no label', 'layer': 'no label', 'olinetype': 'no label', 'linetype': 'no label', 'color': 'no label', 'ocolor': 'no label', 'color24': 'no label', 'transparen': 'no label', 'lweight': 'no label', 'linewidth': 'no label', 'ltscale': 'no label', 'visible': 'no label', 'width': 'no label', 'thickness': 'no label', 'ext': 'no label', });
+lyr_SPAAnalysis02Wheelpath_5.set('fieldLabels', {'fid': 'no label', 'handle': 'no label', 'block': 'no label', 'etype': 'no label', 'space': 'no label', 'layer': 'no label', 'olinetype': 'no label', 'linetype': 'no label', 'color': 'no label', 'ocolor': 'no label', 'color24': 'no label', 'transparen': 'no label', 'lweight': 'no label', 'linewidth': 'no label', 'ltscale': 'no label', 'visible': 'no label', 'width': 'no label', 'thickness': 'no label', 'ext': 'no label', });
+lyr_SPAAnalysis02Blade_6.set('fieldLabels', {'fid': 'no label', 'handle': 'no label', 'block': 'no label', 'etype': 'no label', 'space': 'no label', 'layer': 'no label', 'olinetype': 'no label', 'linetype': 'no label', 'color': 'no label', 'ocolor': 'no label', 'color24': 'no label', 'transparen': 'no label', 'lweight': 'no label', 'linewidth': 'no label', 'ltscale': 'no label', 'visible': 'no label', 'width': 'no label', 'thickness': 'no label', 'ext': 'no label', });
+lyr_SPAAnalysis02Truck_7.set('fieldLabels', {'fid': 'no label', 'handle': 'no label', 'block': 'no label', 'etype': 'no label', 'space': 'no label', 'layer': 'no label', 'olinetype': 'no label', 'linetype': 'no label', 'color': 'no label', 'ocolor': 'no label', 'color24': 'no label', 'transparen': 'no label', 'lweight': 'no label', 'linewidth': 'no label', 'ltscale': 'no label', 'visible': 'no label', 'width': 'no label', 'thickness': 'no label', 'ext': 'no label', });
+lyr_RoadEdgefromRoadSurvey_8.set('fieldLabels', {'FID': 'no label', 'Details': 'header label - visible with data', });
+lyr_DashedYellowLinefromRoadSurvey_9.set('fieldLabels', {'fid': 'no label', 'handle': 'no label', 'block': 'no label', 'etype': 'no label', 'space': 'no label', 'layer': 'no label', 'olinetype': 'no label', 'linetype': 'no label', 'color': 'no label', 'ocolor': 'no label', 'color24': 'no label', 'transparen': 'no label', 'lweight': 'no label', 'linewidth': 'no label', 'ltscale': 'no label', 'visible': 'no label', 'thickness': 'no label', 'ext': 'no label', 'width': 'no label', });
 lyr_WallsfromRoadSurvey_10.set('fieldLabels', {'Details': 'header label - visible with data', });
 lyr_FencefromRoadSurvey_11.set('fieldLabels', {'Details': 'header label - visible with data', });
 lyr_VegetationfromRoadSurvey_12.set('fieldLabels', {'Details': 'header label - visible with data', });

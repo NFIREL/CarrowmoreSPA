@@ -23,7 +23,7 @@ var style_FencefromRoadSurvey_11 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(175,65,0,1.0)', lineDash: [2.28,4.56], lineCap: 'square', lineJoin: 'bevel', width: 2.28}),
+        stroke: new ol.style.Stroke({color: 'rgba(228,93,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.28}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)
